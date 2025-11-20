@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.WebSockets;
+using WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
@@ -20,5 +21,7 @@ app.UseHttpsRedirection();
 app.UseWebSockets();
 
 app.MapGet("/ping", () => "pong");
+app.MapCustomerManagement();
+app.MapWebSocketEndpoints();
 
 app.Run();
