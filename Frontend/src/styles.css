@@ -1,3 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #667eea;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #764ba2;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.connection-section,
+.message-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+input[type="text"]:disabled {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+#connectBtn {
+    background: #28a745;
+    color: white;
+}
+
+#connectBtn:hover:not(:disabled) {
+    background: #218838;
+}
+
+#disconnectBtn {
+    background: #dc3545;
+    color: white;
+}
+
+#disconnectBtn:hover:not(:disabled) {
+    background: #c82333;
+}
+
+#sendBtn {
+    background: #667eea;
+    color: white;
+}
+
+#sendBtn:hover:not(:disabled) {
+    background: #5568d3;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.status.connected {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.disconnected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status.connecting {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.output-section {
+    margin-top: 30px;
+}
+
+#messages {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 2px solid #ddd;
+}
+
+#messages:empty::before {
+    content: 'No messages yet...';
+    color: #999;
+    font-style: italic;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 4px solid transparent;
+}
+
+.message.sent {
+    background: #e3f2fd;
+    border-left-color: #2196f3;
+}
+
+.message.received {
+    background: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+.message.error {
+    background: #ffebee;
+    border-left-color: #f44336;
+}
+
+.message-label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.message.sent .message-label {
+    color: #1976d2;
+}
+
+.message.received .message-label {
+    color: #388e3c;
+}
+
+.message.error .message-label {
+    color: #c62828;
+}
+
+.message-content {
+    color: #333;
+    word-wrap: break-word;
 }

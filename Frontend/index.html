@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspire Vite Demo</title>
+    <title>WebSocket Demo</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+        <h1>WebSocket Echo Client</h1>
+        
+        <div class="connection-section">
+            <label for="wsUrl">WebSocket URL:</label>
+            <input type="text" id="wsUrl" placeholder="wss://..." />
+            <button id="connectBtn">Connect</button>
+            <button id="disconnectBtn" disabled>Disconnect</button>
+            <div id="status" class="status">Disconnected</div>
+        </div>
+
+        <div class="message-section">
+            <label for="messageInput">Message:</label>
+            <input type="text" id="messageInput" placeholder="Enter message..." disabled />
+            <button id="sendBtn" disabled>Send</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Messages</h2>
+            <div id="messages"></div>
+        </div>
+    </div>
     <script type="module" src="/src/index.ts"></script>
 </body>
 </html>
