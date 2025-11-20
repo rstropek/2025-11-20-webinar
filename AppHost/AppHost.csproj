@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.NodeJS.Extensions" Version="9.9.0" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Sqlite" Version="9.9.0" />
   </ItemGroup>
 
   <PropertyGroup>
